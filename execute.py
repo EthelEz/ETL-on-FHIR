@@ -10,6 +10,8 @@ import asyncio
 _ = load_dotenv(find_dotenv())
 
 api_url = os.environ["api_url"]
+database = os.environ["database-name"]
+user = os.environ["user"]
 
 # Main ETL process
 async def main():
@@ -17,12 +19,12 @@ async def main():
 
     postgres_connection_params = {
         'host': 'localhost',
-        'database': 'genre_etl',
-        'user': 'genre_user',
+        'database': database,
+        'user': user,
         'password': '',
         'port': '5432'
     }
-    table_name = 'fhir_ml_data'
+    table_name = 'fhir_etl_data'
 
     # Extract data from FHIR API
     data = await extract_from_fhir_api(api_url, token=token)
