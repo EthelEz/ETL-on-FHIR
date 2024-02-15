@@ -12,7 +12,7 @@ Understanding [postgres](https://www.postgresql.org/docs/) is very important suc
 4. Choose a FHIR Client framework:
 Utilize FHIR client libraries in [Python](https://docs.smarthealthit.org/client-py/) in your chosen programming language. These libraries simplify the process of working with FHIR data management. In our case, we are using [fhirpy](https://github.com/beda-software/fhir-py#readme)
 
-# Seeting the ETL process
+# Setting the ETL process
 1. To be able to perform this, set up your FHIR server as discussed above.
 2. Download your synthetic data from [synthea](https://mitre.box.com/shared/static/ydmcj2kpwzoyt6zndx4yfz163hfvyhd0.zip)
 3. If you are using Azure API for FHIR use [FhirLoader](https://github.com/hansenms/FhirLoader) as recommended by Microsoft Azure to upload it to the API.
@@ -35,4 +35,4 @@ Utilize FHIR client libraries in [Python](https://docs.smarthealthit.org/client-
      ```
 10. If the setup and every other thing is installed correctly, then run `python execute.py` to perform the ETL.
     
-      **Please Note** This process takes about 15 to 20 minutes to run. This is due to the size of the dataset in the API.
+      **Please Note** This process takes about 15 to 20 minutes to run. This is due to the size of the dataset we're extracting from the API and loading to Postgres.
